@@ -1,67 +1,68 @@
 # RUST GRAB UTILITY 🦀
-Sviluppato da Filippo Castellarin (308692), Francesco Gallo (319989) e Andrea Scamporrino (318927) per il corso di Programmazione di Sistema del Politecnico di Torino (A.A 2022/2023)
+Developed by Filippo Castellarin (308692), Francesco Gallo (319989), and Andrea Scamporrino (318927) for the System Programming course at the Polytechnic University of Turin (A.Y 2022/2023)
+
 ## Crates
-- **screenshots**: https://lib.rs/crates/screenshots
-- **egui**: https://docs.rs/egui/latest/egui/ (github: https://github.com/emilk/egui.git)
-- **native-dialog**: https://docs.rs/native-dialog/latest/native_dialog/
-- **arboard**: https://lib.rs/crates/arboard
-- **chrono**: https://lib.rs/crates/chrono
-- **image**: https://lib.rs/crates/image
+- **screenshots**: [lib.rs/crates/screenshots](https://lib.rs/crates/screenshots)
+- **egui**: [docs.rs/egui/latest/egui/](https://docs.rs/egui/latest/egui/) (GitHub: [github.com/emilk/egui.git](https://github.com/emilk/egui.git))
+- **native-dialog**: [docs.rs/native-dialog/latest/native_dialog/](https://docs.rs/native-dialog/latest/native_dialog/)
+- **arboard**: [lib.rs/crates/arboard](https://lib.rs/crates/arboard)
+- **chrono**: [lib.rs/crates/chrono](https://lib.rs/crates/chrono)
+- **image**: [lib.rs/crates/image](https://lib.rs/crates/image)
 
-## Funzionalità
-1. [x] **Platform Support**: l'app può essere utilizzata su tutte le piattaforme.
-2. [x] **User Interface (UI)**: interfaccia utente facilmente usufruibile.
-3. [x] **Selection Options**: riquadro di selezione della schermata per ritagliare la porzione di schermo da catturare.
-4. [x] **Hotkey Support**: possibilità di utilizzare delle shortcut da tastiera per eseguire le operazioni.
-5. [x] **Output Format**: diversi formati supportati per il salvataggio della schermata (png, jpg, gif). Salvataggio anche negli appunti del dispositivo.
-<!-- FUNZIONALITÀ BONUS -->
-6. [x] **Annotation Tools**: tool per disegnare sull'immagine della schermata appena acquisita e salvare le annotazioni.
-7. [x] **Delay Timer**: tramite l'interfaccia, l'utente può impostare il delay dopo il quale la schermata sarà catturata.
-8. [x] **Save Options**: viene aperta una finestra di dialogo del file system attraverso la quale l'utente può scegliere il nome (se diverso da default) e il formato dell'immagine.
-9. [x] **Multi-monitor Support**: possibilità di catturare le schermate anche degli altri schermi connessi.
+## Features
+1. [x] **Platform Support**: The app can be used on all platforms.
+2. [x] **User Interface (UI)**: Easily navigable user interface.
+3. [x] **Selection Options**: Screen selection box to crop the screen portion to capture.
+4. [x] **Hotkey Support**: Ability to use keyboard shortcuts for operations.
+5. [x] **Output Format**: Various supported formats for screen capture (png, jpg, gif). Saving also to device clipboard.
+<!-- BONUS FEATURES -->
+6. [x] **Annotation Tools**: Tools to draw on the captured screen image and save annotations.
+7. [x] **Delay Timer**: Through the interface, the user can set the delay after which the screen will be captured.
+8. [x] **Save Options**: A file system dialog window opens, allowing the user to choose the name (if different from default) and format of the image.
+9. [x] **Multi-monitor Support**: Ability to capture screens from connected monitors.
 
-## Esempio di utilizzo
+## Usage Example
 
-![Schermata iniziale + pannello opzioni](esempio_1.png)
+![Initial Screen + Options Panel](esempio_1.png)
 
-![A schermata catturata, modifica dell'immagine](esempio_2.png)
+![Captured Screen, Image Editing](esempio_2.png)
 
-- `🖵`: per catturare la schermata intera
-- `⛶`: per catturare soltanto la porzione di schermo inquadrata
-- `🕓`: per impostare un timer
-- `Capture`: esegue uno screenshot
-- `Options`: per aprire il riquadro dove modificare le opzioni
-- `Modify`: apre l'annotation tool per la modifica dell'immagine
-    * `🖊`: disegno a tratto libero
-    * `/`: disegna un segmento
-    * `↖`: disegna una freccia
-    * `☐`: disegna un rettangolo
-    * `⭕`: disegna un cerchio
-    * `Text`: aggiunge un testo sull'immagine (la conferma dell'aggiunta è richiesta da `Save text`)
-    * `⟲`: annulla l'ultima modifica
-    * `⛶`: ritaglia l'immagine (la conferma del ritaglio è richiesta da ` Save crop`)
-    * `Cancel`: annulla tutte le modifiche apportate all'immagine
-    * `Save modify`: salva in maniera permanente tutte le modifiche apportate all'immagine
+- `🖵`: Capture the entire screen
+- `⛶`: Capture only the framed screen portion
+- `🕓`: Set a timer
+- `Capture`: Execute a screenshot
+- `Options`: Open the panel to modify options
+- `Modify`: Open the annotation tool to edit the image
+    * `🖊`: Freehand drawing
+    * `/`: Draw a segment
+    * `↖`: Draw an arrow
+    * `☐`: Draw a rectangle
+    * `⭕`: Draw a circle
+    * `Text`: Add text to the image (confirmation of addition required by `Save text`)
+    * `⟲`: Undo the last modification
+    * `⛶`: Crop the image (confirmation of cropping required by `Save crop`)
+    * `Cancel`: Undo all changes made to the image
+    * `Save modify`: Permanently save all changes made to the image
 
-- `📋`: copia l'immagine negli appunti del dispositivo
-- `Take another screenshot`: permette di eseguire un altro screenshot cancellando l'immagine e le modifiche in corso 
-- `X`: per chiudere l'applicazione
+- `📋`: Copy the image to the device clipboard
+- `Take another screenshot`: Allow taking another screenshot by clearing the current image and modifications
+- `X`: Close the application
 
-## Percorso di salvataggio predefinito
+## Default Saving Path
 - `./screenshots`
 
-## Shortcut predefinite
-- `ctrl+F` : Imposta la cattura a schermo intero
-- `ctrl+ArrowDown` : Imposta la cattura ad una selezione dello schermo
-- `ctrl+T` : Visualizza le opzioni di timer
-- `ctrl+shift+T` : Inizia il conteggio del timer se è stato configurato, altrimenti apre le opzioni del timer
-- `ctrl+alt+T` : Annulla un timer in corso
-- `ctrl+O` : Visualizza le opzioni
-- `ctrl+enter` : Esegue uno screenshot
-- `ctrl+X` : Chiude l'applicazione
-- `ctrl+M` : Visualizza le opzioni di modifica dell'immagine una volta acquisita
-- `ctrl+A` : Esegue un altro screenshot
-- `ctrl+S` : Salva l'immagine
-- `Ctrl+C` : Copia l'immagine 
-- `Ctrl+Z` : Annulla l'ultima modifica all'immagine
-- N.B. i tasti di selezione delle shortcut variano a seconda del sistema operativo in uso: ctrl corrisponde al cmd per macos. 
+## Default Shortcuts
+- `ctrl+F`: Set full-screen capture
+- `ctrl+ArrowDown`: Set capture to a screen selection
+- `ctrl+T`: Display timer options
+- `ctrl+shift+T`: Start the timer countdown if configured, otherwise open the timer options
+- `ctrl+alt+T`: Cancel an ongoing timer
+- `ctrl+O`: Display options
+- `ctrl+enter`: Execute a screenshot
+- `ctrl+X`: Close the application
+- `ctrl+M`: Display image modification options once captured
+- `ctrl+A`: Execute another screenshot
+- `ctrl+S`: Save the image
+- `Ctrl+C`: Copy the image
+- `Ctrl+Z`: Undo the last image modification
+- Note: Shortcut selection keys vary depending on the operating system in use: ctrl corresponds to cmd for macOS.
